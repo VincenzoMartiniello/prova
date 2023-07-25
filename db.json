@@ -1,0 +1,89 @@
+{
+
+  "listUtenti": [
+    {
+      "id": 1,
+      "nome": "Vincenzo",
+      "cognome": "Martiniello",
+      "sesso": "maschile",
+      "nazionalita": "italiana",
+      "indirizzo": "Napoli",
+      "numero_di_telefono": 34567,
+      "sposato": "Si",
+      "data_di_nascita": "2023-04-11"
+    },
+    {
+      "id": 2,
+      "nome": "Antonio",
+      "cognome": "Martiniello",
+      "sesso": "maschile",
+      "nazionalita": "tedesca",
+      "indirizzo": "Napoli",
+      "numero_di_telefono": 65293,
+      "sposato": "Si",
+      "data_di_nascita": "2023-04-01"
+    },
+    {
+      "id": 3,
+      "nome": "Anna",
+      "cognome": "Menale",
+      "sesso": "maschile",
+      "nazionalita": "italiana",
+      "indirizzo": "Gricignano",
+      "numero_di_telefono": 12598,
+      "sposato": "Si",
+      "data_di_nascita": "2013-04-07"
+    },
+    {
+      "id": 4,
+      "nome": "Elena",
+      "cognome": "Martiniella",
+      "sesso": "femminile",
+      "nazionalita": "spagnola",
+      "indirizzo": "Aversa",
+      "numero_di_telefono": 13598,
+      "sposato": "Si",
+      "data_di_nascita": "2013-04-07"
+    },
+    {
+      "id": 5,
+      "nome": "Elena",
+      "cognome": "Martiniello",
+      "sesso": "femminile",
+      "nazionalita": "spagnola",
+      "indirizzo": "Aversa",
+      "numero_di_telefono": 13598,
+      "sposato": "No",
+      "data_di_nascita": "2013-04-07"
+    },
+    {
+      "id": 6,
+      "nome": "Elena",
+      "cognome": "Martiniello",
+      "sesso": "femminile",
+      "nazionalita": "spagnola",
+      "indirizzo": "Gricignano",
+      "numero_di_telefono": 13798,
+      "sposato": "No",
+      "data_di_nascita": "2013-03-07"
+    }
+  ],
+  "profile": {
+    "user": "vincenzo",
+    "password":"1234"
+  },
+  "list1":  {
+    "nome":"Vincenzo",
+    "cognome":"Martiniello"
+  },
+  "list2":  {
+    "città":"Gricignano",
+    "cap":"81030"
+  },
+  "list3":  {
+    "job":"developer",
+    "telefono":"098765454"
+  }
+
+
+}

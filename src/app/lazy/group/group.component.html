@@ -1,0 +1,86 @@
+
+<br>
+<div class="azioni3">
+  <button type="button" class="btn btn-success" (click)="addGroup()"><i class="bi bi-tv"></i> Nuovo Gruppo</button>
+</div>
+
+  <!-- <div class="azioni2">
+  <button type="button" class="btn btn-danger btn-sm" (click)="deleteForm()">Rimuovi Form</button>
+  </div> -->
+<br>
+<br>
+<form [formGroup]="orderForm">
+<div formArrayName="groups" *ngFor="let item of groups().controls  let i = index">
+<div name="orderForm"  [formGroupName]="i">
+  <div class="card" style="width: 78rem;" >
+    <div class="card-body">
+      <div class="azioni2">
+        <label for="exampleInputPassword1" class="form-label"></label><br>
+        <button type="button" class="btn btn-danger" (click)="removeGroup(i)"><i class="bi bi-dash-circle" style="color: white;"> Rimuovi Gruppo</i></button>
+      </div>
+      <div class="azioni">
+        <button type="button" class="btn btn-success" (click)="addCriteria(i)"><i class="bi bi-plus-circle" style="color: white;"> Aggiungi Criterio</i></button>
+      </div>
+      <br><br>
+
+
+
+  <div>
+    <div formArrayName="criterias" *ngFor="let item of criterias(i).controls  let j = index">
+    <div name="orderForm1"  [formGroupName]="j">
+
+  <div class="card" style="width: 76rem;" >
+    <div class="card-body">
+
+
+      <div class="row g-3">
+
+   <div class="col-md-3">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Indicatore
+      </button>
+      <app-custom [data1]="data1"  formControlName="indicatore" (ngModelChange)="changeData(i,j,item)">
+      </app-custom>
+    </div>
+    </div>
+    <div class="col-md-3">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Operatore
+        </button>
+        <app-custom2  [currentData1]="currentData1" formControlName="operatore"></app-custom2>
+
+
+      </div>
+        </div>
+        <div class="col-md-3">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Valore
+            </button>
+            <app-custom3  [currentData2]="currentData2" formControlName="valore"></app-custom3>
+          </div>
+            </div>
+      <div class="col-md-3">
+        <i (click)="removeCriteria(i,j)" class="bi bi-dash-circle-fill" style="color: rgba(255, 0, 0, 0.6);"></i>
+      </div>
+
+  </div>
+  </div>
+
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div>
+  <button type="button" (click)="onSave()">Salva</button>
+</div>
+</form>
+
+{{this.orderForm.value | json}}

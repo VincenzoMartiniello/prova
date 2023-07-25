@@ -1,0 +1,198 @@
+
+  <br>
+  <div class="container-fluid" >
+  <h4 Align="center">Utenti</h4>
+  <table class="table table-striped" >
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Cognome</th>
+        <th scope="col">Sesso</th>
+        <th scope="col">Data di Nascita</th>
+        <th scope="col">Nazionalità</th>
+        <th scope="col">Elimina</th>
+        <th scope="col">Dettaglio</th>
+        <th scope="col">Modifica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr appColor color="rgba(128, 128, 128, 0.82)" *ngFor="let utente of utenti" >
+        <td>{{utente.nome}}  </td>
+        <td>{{utente.cognome}}</td>
+        <td>{{utente.sesso}}</td>
+        <td>{{utente.data_di_nascita}}</td>
+        <td>{{utente.nazionalita}}</td>
+        <td> <i class="bi bi-trash" style="color: rgba(255, 0, 0, 0.6);" (click)="selectedUtente=utente.id" (click)="onDelete()"></i></td>
+        <td> <i class="bi bi-info-circle" style="color:black;" (click)="selectedUtente=utente.id" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="onDetail()"></i> </td>
+        <td> <i class="bi bi-pencil-square" style="color:rgb(0, 132, 255);"(click)="selectedUtente=utente.id"  (click)="utente1=utente" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onEdit()" ></i></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+  <!-- Modifica Utente Precedente
+      <div><p>Modifica Utente</p></div>
+      <form class="row g-3" [formGroup]="form2">
+        <div class="col-md-3">
+          <label for="exampleInputEmail1" class="form-label">Id:</label>
+          <input type="number" class="form-control" id="id" formControlName="id" [(ngModel)]="utente1.id" aria-describedby="emailHelp" >
+          <div id="emailHelp" class="form-text"></div>
+        </div>
+        <div class="col-md-3">
+          <label for="exampleInputEmail1" class="form-label">Name:</label>
+          <input type="text" class="form-control" id="nome" formControlName="nome" [(ngModel)]="utente1.nome" aria-describedby="emailHelp" >
+          <div id="emailHelp" class="form-text"></div>
+        </div>
+        <div class="col-md-3">
+          <label for="exampleInputPassword1" class="form-label">Surname:</label>
+          <input type="text" class="form-control" id="cognome" [(ngModel)]="utente1.cognome" formControlName="cognome" >
+        </div>
+        <div class="col-md-3">
+        <label for="exampleInputEmail1" class="form-label">Sex:</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="utente1.sesso" formControlName="sesso">
+          <option selected>Open this select menu</option>
+          <option value="maschile">Male</option>
+          <option value="femminile">Female </option>
+        </select>
+      </div>
+        <div class="col-md-3">
+          <label for="exampleInputPassword1" class="form-label">Nationality:</label>
+          <input type="text" class="form-control" id="nazionalità" [(ngModel)]="utente1.nazionalita" formControlName="nazionalita" >
+        </div>
+        <div class="col-md-3">
+          <label for="exampleInputPassword1" class="form-label">Address:</label>
+          <input type="text" class="form-control" id="indirizzo" [(ngModel)]="utente1.indirizzo" formControlName="indirizzo" >
+        </div>
+        <div class="col-md-3">
+          <label for="exampleInputPassword1" class="form-label">Phone number:</label>
+          <input type="number" class="form-control" id="numero_di_telefono" [(ngModel)]="utente1.numero_di_telefono" formControlName="numero_di_telefono" >
+        </div>
+        <div class="col-md-3">
+          <label for="exampleInputPassword1" class="form-label">Married:</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sposato" [(ngModel)]="utente1.sposato" formControlName="sposato" value="True" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              True
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sposato" [(ngModel)]="utente1.sposato" formControlName="sposato" value="False" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              False
+            </label>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="exampleInputPassword1" class="form-label">Date of birth:</label>
+          <input type="date" class="form-control" id="date_wedding" [(ngModel)]="utente1.data_di_nascita" formControlName="data_di_nascita" >
+        </div>
+      </form>
+  -->
+  <!-- Modal per Modifica-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modifica Utente</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+        </div>
+        <div class="modal-body">
+              <!--Testo Modale-->
+      <form class="row g-3" [formGroup]="form2">
+        <div class="col-md-3">
+          <label for="exampleInputEmail1" class="form-label">Id:</label>
+          <input type="number" class="form-control" id="id" formControlName="id"  aria-describedby="emailHelp" >
+          <div id="emailHelp" class="form-text"></div>
+        </div>
+        <div class="col-md-3">
+          <label for="exampleInputEmail1" class="form-label">Nome:</label>
+          <input type="text" class="form-control" id="nome" formControlName="nome"    aria-describedby="emailHelp" >
+          <div id="emailHelp" class="form-text"></div>
+        </div>
+        <div class="col-md-3">
+          <label for="exampleInputPassword1" class="form-label">Cognome:</label>
+          <input type="text" class="form-control" id="cognome"  formControlName="cognome" >
+        </div>
+        <div class="col-md-3">
+        <label for="exampleInputEmail1" class="form-label">Sesso:</label>
+        <select class="form-select" aria-label="Default select example" formControlName="sesso">
+          <option selected>Apri questo menu di selezione</option>
+          <option value="maschile">Maschile</option>
+          <option value="femminile">Femminile </option>
+        </select>
+      </div>
+        <div class="col-md-3">
+          <label for="exampleInputPassword1" class="form-label">Nazionalità:</label>
+          <input type="text" class="form-control" id="nazionalità"  formControlName="nazionalita" >
+        </div>
+        <div class="col-md-3">
+          <label for="exampleInputPassword1" class="form-label">Indirizzo:</label>
+          <input type="text" class="form-control" id="indirizzo"   formControlName="indirizzo" >
+        </div>
+        <div class="col-md-3">
+          <label for="exampleInputPassword1" class="form-label">Numero di Telefono:</label>
+          <input type="number" class="form-control" id="numero_di_telefono"  formControlName="numero_di_telefono" >
+        </div>
+        <div class="col-md-3">
+          <label for="exampleInputPassword1" class="form-label">Sposato:</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sposato"  formControlName="sposato" value="True" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Si
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sposato"   formControlName="sposato" value="False" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              No
+            </label>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="exampleInputPassword1" class="form-label">Data di Nascita:</label>
+          <input type="date" class="form-control" id="date_wedding"  formControlName="data_di_nascita" >
+        </div>
+    </form>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <button type="button" class="btn btn-primary" (click)="onSave()">Salva modifiche</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal per Dettaglio-->
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModal1Label">Dettaglio Utente</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal1-body">
+              <!--Testo Modale-->
+            <div>
+              <p>Id: {{utente.id}} <br>
+                 Nome: {{utente.nome}}<br>
+                 Cognome: {{utente.cognome}}<br>
+                 Sesso: {{utente.sesso}}<br>
+                 Data di Nascita: {{utente.data_di_nascita}}<br>
+                 Nazionalità: {{utente.nazionalita}}<br>
+                 Sposato: {{utente.sposato}}<br>
+                 Numero di telefono: {{utente.numero_di_telefono}}<br>
+                 Indirizzo: {{utente.indirizzo}}
+              </p>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+

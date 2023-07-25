@@ -1,0 +1,18 @@
+
+
+
+<br>
+<p>In questo campo di input puoi inserire soltanto numeri</p>
+<div >
+  <label for="exampleInput" class="form-label">Id:</label><br>
+  <input appNumeri type="text"  id="id">
+</div>
+<br>
+<p>Generazione di un array di stringhe casuali</p>
+<div>
+  <button type="button" (click)="getRandomDifferent()">random</button>
+</div>
+<br>
+<p>Controllo modulo personalizzato</p>
+<app-input  [(ngModel)]="data"></app-input>
+<p>Data here:{{data}}</p>

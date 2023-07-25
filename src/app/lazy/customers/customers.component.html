@@ -1,0 +1,59 @@
+
+
+  <div class="azioni">
+  <button type="button" class="btn btn-primary btn-sm" (click)="addForm()">Aggiungi Form</button>
+  </div>
+
+  <div class="azioni2">
+  <button type="button" class="btn btn-danger btn-sm" (click)="deleteForm()">Rimuovi Form</button>
+  </div>
+
+<br>
+<form [formGroup]="orderForm" >
+<div formArrayName="items" *ngFor="let item of items.controls  let i = index">
+<div name="orderForm"  [formGroupName]="i">
+  <div class="card" style="width: 55rem;" >
+    <div class="card-body">
+<div class="row g-3">
+  <div class="col-md-4">
+    <label for="exampleInputEmail1" class="form-label">Id:</label>
+    <input type="text" class="form-control" id="id" formControlName="id" aria-describedby="emailHelp">
+    <div  id="emailHelp" class="form-text"></div>
+  </div>
+  <div class="col-md-4">
+    <label for="exampleInputEmail1" class="form-label">Nome:</label>
+    <input type="text" class="form-control" id="nome" formControlName="nome" aria-describedby="emailHelp" >
+    <div id="emailHelp" class="form-text"></div>
+  </div>
+  <div class="col-md-4">
+    <label for="exampleInputPassword1" class="form-label">Cognome:</label>
+    <input type="text" class="form-control" id="cognome" formControlName="cognome" >
+  </div>
+  <div class="col-md-4">
+  <label for="exampleInputEmail1" class="form-label">Sesso:</label>
+  <select class="form-select" aria-label="Default select example" formControlName="sesso">
+    <option selected>Apri questo menu di selezione</option>
+    <option value="maschile">Maschile</option>
+    <option value="femminile">Femminile </option>
+  </select>
+  </div>
+  <div class="col-md-4">
+    <label for="exampleInputPassword1" class="form-label">Numero di Telefono:</label>
+    <input type="text" class="form-control" id="numero_di_telefono"  formControlName="numero_di_telefono" >
+  </div>
+  <div class="col-md-4">
+    <label for="exampleInputPassword1" class="form-label">Data di Nascita:</label>
+    <input type="date" class="form-control" id="date_wedding"  formControlName="data_di_nascita" >
+  </div>
+  <div>
+    <label for="exampleInputPassword1" class="form-label"></label><br>
+    <button #toTarget type="button" [attr.totarget]="i+1" class="btn btn-primary btn-sm" (click)="onSend(i)">Invia</button>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</form>
+

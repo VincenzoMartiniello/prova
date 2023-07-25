@@ -1,0 +1,15 @@
+.box-1 {
+  position: relative;}
+.box-2 {
+position: absolute;
+top: 400px;
+left: 810px
+}
+.id{
+  background-color: red;
+}
+.azioni{
+position: relative;
+left: 1100px;
+top:-40px
+}

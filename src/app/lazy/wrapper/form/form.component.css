@@ -1,0 +1,10 @@
+input[type="email"]{
+  width: 400px;
+}
+
+input[type="password"]{
+  width: 400px;
+}
+form {
+  background-color:whitesmoke;
+}
